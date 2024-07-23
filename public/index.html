@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Chat App</title>
+    <link rel="stylesheet" href="style.css" />
     <!-- // font-awesome -->
     <link
       rel="stylesheet"
@@ -14,7 +15,8 @@
     />
   </head>
   <body>
-    <h1>Snappy Chat</h1>
+    <h1 class="title">Snappy Chat</h1>
+    <h3 class="clients-total" id="client-total">Group members</h3>
     <div class="main">
       <div class="name">
         <span><i class="far fa-user"></i></span>
@@ -23,28 +25,13 @@
           type="text"
           id="name-input"
           class="name-input"
-          value="anonymous"
+          value="Enter your name here"
         />
       </div>
-      <ul class="message-container" id="message-conatiner">
-        <li class="message-left">
-          <p class="message">
-            lorem impsum
-            <spam>bluebird 26july 10:40</spam>
-          </p>
-        </li>
-        <li class="message-right">
-          <p class="message">
-            lorem impsum
-            <spam>bluebird 26july 10:40</spam>
-          </p>
-        </li>
-        <li class="message-feedback">
-          <p class="feedback" id="feedback">killer is typing</p>
-        </li>
-      </ul>
+      <ul class="message-container" id="message-container"></ul>
       <form class="message-form" id="message-form">
         <input
+          placeholder="Enter message.."
           type="text"
           name="message"
           class="message-input"
@@ -54,8 +41,9 @@
           Send<span><i class="fas fa-paper-plane"></i></span>
         </button>
       </form>
-
-      <h3 class="clients-total" id="client-total">Group members</h3>
     </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="main.js"></script>
   </body>
 </html>
